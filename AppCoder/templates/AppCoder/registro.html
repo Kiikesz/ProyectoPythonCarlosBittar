@@ -1,0 +1,21 @@
+{% extends "AppCoder/padre.html" %}
+
+{% block titulo %}
+Registro de nuevo usuario
+{% endblock %}
+
+{% block form %}
+<h2>
+<form action="" method="POST" > {% csrf_token %}
+    
+    <table style="margin-left:auto;margin-right:auto;">
+        {{miformulario.as_table}}
+    </table>
+
+    <div style="text-align: center;">
+        <input type="submit", value="Crear Usuario">
+    </div>
+
+</form>
+</h2>
+{% endblock %}

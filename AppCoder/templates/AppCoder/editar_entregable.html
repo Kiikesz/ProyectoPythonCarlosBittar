@@ -1,0 +1,21 @@
+{% extends "AppCoder/padre.html" %}
+
+{% block titulo %}
+Sección para Editar Entregables
+{% endblock %}
+
+{% block form %}
+<h2>
+<form action="" method="POST" > {% csrf_token %}
+    
+    <table style="margin-left:auto;margin-right:auto;">
+        {{formularioentregable.as_table}}
+    </table>
+
+    <div style="text-align: center;">
+        <input type="submit", value="Enviar">
+    </div>
+
+</form>
+</h2>
+{% endblock %}

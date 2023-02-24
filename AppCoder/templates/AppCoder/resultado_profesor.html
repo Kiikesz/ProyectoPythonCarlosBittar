@@ -1,0 +1,33 @@
+{% extends "AppCoder/padre.html" %}
+
+{% block titulo %}
+estas buscando el profesor por email: {{email}}.
+<p><br></p>
+ 
+{% for x in resultados %}
+<h5>
+<li style="color:white">>Nombre: {{x.nombre}}, Apellido: {{x.apellido}}, Email: {{x.email}}, Profesión: {{x.profesion}}, Edad: {{x.edad}} </li>
+{% if request.user.is_authenticated %}
+<a href="{% url 'Borrar Profesor' x.email %}"> Borrar </a>
+<a href="{% url 'Editar Profesor' x.email %}"> Editar </a>
+{% endif %}
+</h5>
+{% endfor %}
+
+{% endblock %}
+
+{% block form %}
+<p><br></p>
+<p><br></p>
+<h2>
+<form action='{% url "resultado profesor" %}' method="GET" >
+    
+    <div style="text-align: center;">
+    <p style="color:white">deseas buscar otro profesor por email?</p> 
+    <input type="email" name="email">
+    <input type="submit" value="Buscar">
+    </div>
+</form>
+</h2>
+
+{% endblock %}

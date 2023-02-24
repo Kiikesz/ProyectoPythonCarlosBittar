@@ -1,0 +1,9 @@
+{% extends "AppCoder/padre.html" %}
+
+{% block titulo %}
+{% if request.user.is_authenticated %}
+Bienvenido {{request.user}}
+{% else %}
+Bienvenido a la página :)
+{% endif %}
+{% endblock %}
